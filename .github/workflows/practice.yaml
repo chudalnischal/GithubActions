@@ -7,20 +7,12 @@ on:
 
 jobs:
   Checking:
-    runs-on: ubuntu-latest
+    runs-on: python3-latest
     steps: 
       - name: Checking out the code
         uses: actions/checkout@v2
-
-      - name: Install Python
-        run: apt-get update && apt-get install -y python3
-
-  building: 
-    runs-on: ubuntu-latest
-    steps:
-      - name: running
-        run: echo "running the code"
       - run: python3 main.py
+
   output: 
     runs-on: ubuntu-latest
     steps:
