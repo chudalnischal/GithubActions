@@ -1,0 +1,26 @@
+name: practice for the GitHub Actions
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  Checking:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checking out the code
+        uses: actions/checkout@v2
+        run: apt-get update && apt-get install -y python3
+
+  building: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: running
+        run: echo "running the code"
+      - run: python3 main.py
+  output: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: output
+        run: echo "sucess"
